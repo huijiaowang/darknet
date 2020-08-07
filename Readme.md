@@ -5,7 +5,7 @@
 ---
 [TOC]
 
-##0、To-Do-List
+## 0、To-Do-List
   - 基于 Yolov4 系列模型训练 Human Detector
     - [x] 跑通源码 
     - [x] 将源码配置为 Human Detector 并训练
@@ -18,7 +18,8 @@
 [源码参考](https://github.com/AlexeyAB/darknet)
 [我的复现](https://github.com/huijiaowang/darknet)
 
-##2、使用步骤
+
+## 2、使用步骤
 1. 下载 [我的复现](https://github.com/huijiaowang/darknet) **HD01分支**
 > git clone https://github.com/huijiaowang/darknet  
 
@@ -118,7 +119,7 @@
   待做
 
 
-##4、实验记录
+## 4、实验记录
 
 | 实验序号 | 参数  | 描述  | 状态  | 精度  | 备注  |
 |:--------:|:-----:|:-----:|:-----:|:-----:|:-----:|
@@ -126,7 +127,7 @@
 | HD02     | ||||
 
 
-##5、复现效果
+## 5、复现效果
 1. 单张图片测试
 
   - 用 YoloV4 自带的 weights 测试 data/person.jpg ：
