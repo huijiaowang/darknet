@@ -14,7 +14,6 @@
 [源码参考](https://github.com/AlexeyAB/darknet)
 [我的复现](https://github.com/huijiaowang/darknet)
 
-
 ## 2、使用步骤
 1. 下载 [我的复现](https://github.com/huijiaowang/darknet) **HD01分支**
 > git clone https://github.com/huijiaowang/darknet  
@@ -39,7 +38,7 @@
 5. 验证在 COCO 数据集上的精度
 > ./human_COCO2017_ap.sh 
 
-##3、修改源码
+## 3、修改源码
 * 参考自[源码](https://github.com/AlexeyAB/darknet)中：
 [How to train (to detect your custom objects)](https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects)
 [Training and Evaluation of speed and accuracy on MS COCO](https://github.com/AlexeyAB/darknet/wiki/Train-Detector-on-MS-COCO-(trainvalno5k-2014)-dataset)
