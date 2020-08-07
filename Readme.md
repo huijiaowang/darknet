@@ -137,8 +137,15 @@
   人类检测结果为：
   person: 71%     (left_x:  183   top_y:   94   width:   93   height:  274) 
 
-2. mAP + AP 精度
-待做
+2. mAP + AP 精度  
+
+ class_id = 0, name = person, ap = 58.68%         (TP = 5496, FP = 2076) 
+
+ for conf_thresh = 0.25, precision = 0.73, recall = 0.50, F1-score = 0.60 
+ for conf_thresh = 0.25, TP = 5496, FP = 2076, FN = 5392, average IoU = 55.55 % 
+
+ IoU threshold = 50 %, used Area-Under-Curve for each unique Recall 
+ mean average precision (mAP@0.50) = 0.586805, or 58.68 % 
 
 
 
