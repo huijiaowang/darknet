@@ -1,0 +1,6 @@
+classes = 1
+train = /hdd01/wanghuijiao/darknet/data/trainvalno5k.txt
+valid = /hdd01/wanghuijiao/darknet/data/5k.txt
+names = data/human_detector.names
+backup = /hdd01/wanghuijiao/HD01/backup
+eval=/hdd01/wanghuijiao/darknet/coco

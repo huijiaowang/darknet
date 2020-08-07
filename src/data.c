@@ -221,19 +221,22 @@ box_label *read_boxes(char *filename, int *n)
     int id;
     int count = 0;
     while(fscanf(file, "%d %f %f %f %f", &id, &x, &y, &w, &h) == 5){
-        boxes = (box_label*)xrealloc(boxes, (count + 1) * sizeof(box_label));
-        boxes[count].track_id = count + img_hash;
-        //printf(" boxes[count].track_id = %d, count = %d \n", boxes[count].track_id, count);
-        boxes[count].id = id;
-        boxes[count].x = x;
-        boxes[count].y = y;
-        boxes[count].h = h;
-        boxes[count].w = w;
-        boxes[count].left   = x - w/2;
-        boxes[count].right  = x + w/2;
-        boxes[count].top    = y - h/2;
-        boxes[count].bottom = y + h/2;
-        ++count;
+        // Modified by wanghuijiao: only read human ids, to train human detector! Adding if(id==0){} condition.
+        if (id==0){
+            boxes = (box_label*)xrealloc(boxes, (count + 1) * sizeof(box_label));
+            boxes[count].track_id = count + img_hash;
+            printf(" boxes[count].track_id = %d, count = %d \n", boxes[count].track_id, count);
+            boxes[count].id = id;
+            boxes[count].x = x;
+            boxes[count].y = y;
+            boxes[count].h = h;
+            boxes[count].w = w;
+            boxes[count].left   = x - w/2;
+            boxes[count].right  = x + w/2;
+            boxes[count].top    = y - h/2;
+            boxes[count].bottom = y + h/2;
+            ++count;
+        }
     }
     fclose(file);
     *n = count;
