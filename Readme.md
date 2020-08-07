@@ -23,7 +23,10 @@
 > git clone https://github.com/huijiaowang/darknet  
 
 2. 文件准备
-  - 下载 
+  - 下载 **csdarnet53-omega.conv.105** -这是在ImageNet上预训练过的 darknet53 网络前105层：
+  - 从[这]( https://drive.google.com/open?id=18jCwaL4SJ-jOvXrZNGHJ5yz44g9zi8Hm)下载 csdarknet53-omega_final.weights
+  - 取前105层
+  > ./darknet partial cfg/csdarknet53-omega.cfg csdarknet53-omega_final.weights csdarknet53-omega.conv.105 105
 
 3. 开启训练
 
