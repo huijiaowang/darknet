@@ -1,8 +1,4 @@
 ﻿# Human Detector Based on YOLOV4 训练记录
-
-标签（空格分隔）： 网络训练
-
----
 [TOC]
 
 ## 0、To-Do-List
