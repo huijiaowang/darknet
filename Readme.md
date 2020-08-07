@@ -19,7 +19,7 @@
 > git clone https://github.com/huijiaowang/darknet  
 
 2. 文件准备
-  - 下载 **csdarnet53-omega.conv.105** -这是在ImageNet上预训练过的 darknet53 网络前105层：
+  - 准备 **csdarnet53-omega.conv.105** -这是在ImageNet上预训练过的 darknet53 网络前105层：
   - 从[这]( https://drive.google.com/open?id=18jCwaL4SJ-jOvXrZNGHJ5yz44g9zi8Hm)下载 csdarknet53-omega_final.weights
   - 取前105层
   > ./darknet partial cfg/csdarknet53-omega.cfg csdarknet53-omega_final.weights csdarknet53-omega.conv.105 105
@@ -30,13 +30,13 @@
 > ./train_human.sh  
 
 * 多GPU训练,需要先用单gpu训练一段时间，例如1000个iteration后，在进行多gpu训练
-> ./train_human_mgpu.sh whj_yolov4_1000.weights  
+> ./train_human_mgpu.sh human_detector_yolov4_1000.weights  
 
 4. 测试图片
 > ./test_human.sh data/person.jpg
 
 5. 验证在 COCO 数据集上的精度
-> ./human_COCO2017_ap.sh 
+待做
 
 ## 3、修改源码
 * 参考自[源码](https://github.com/AlexeyAB/darknet)中：
