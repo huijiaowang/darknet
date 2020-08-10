@@ -47,8 +47,7 @@
 * 准备文件
 1. 修改 [yolov4.cfg](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg)，新文件命名为 **human_detector_yolov4.cfg**，修改以下行：
 > width=512 （需被32整除）
-> height=512（需被32整除）
-> subdivisions=8 (若 run time error，则改成16)  
+> height=512（需被32整除）> subdivisions=8 (若 run time error，则改成16)  
 > max_batches=6000（=2000*检测类别数，注意：该数需不少于6000，且不少于训练图像数量）
 > steps=4800,5400 (max_batches的80%，90%)
 
@@ -76,22 +75,18 @@
 > ln -s /hdd02/zhangyiyang/data/coco/val2014  /hdd01/wanghuijiao/darknet/coco/cocoMetadata/images
 
   - 为数据生成规定输入格式：
-      - 为每张 .jpg 图片生成单独的 .txt 文件，图片中每个目标对象占一行，格式为
-         <object-class>  <x_center>  <y_center>  <width>  <height>   
+  - 为每张 .jpg 图片生成单独的 .txt 文件，图片中每个目标对象占一行，格式为 <object-class>  <x_center>  <y_center>  <width>  <height>   
+      - <object-class>：从标号为 0 到 (classes-1) 的整数，表示类别标签序号         
+      - <x_center> < y_center>  <width>  <height>: 是与图像标签框宽和高有关的浮点数，例如： 
+        > x_center = absolute_x_center / image_width 
+        > height = absolute_height / image_height
 
-              - object-class：从标号为 0 到 (classes-1) 的整数，表示类别标签序号  
-              
-              - x_center  y_center  width  height: 是与图像标签框宽和高有关的浮点数，例如： 
-               > x_center = absolute_x_center / image_width 
-                 height = absolute_height / image_height
-
-              - 注意：x_center, y_center 是矩形框的中心并非左上角。  
-              
-              - .txt文件名和 .jpg 图片名保持一致
-              - txt 内容示例如：
-              > 1 0.716797 0.395833 0.216406 0.147222
-                0 0.687109 0.379167 0.255469 0.158333
-                1 0.420312 0.395833 0.140625 0.166667  
+      - 注意：x_center, y_center 是矩形框的中心并非左上角。  
+      - .txt文件名和 .jpg 图片名保持一致
+      - txt 内容示例如：
+        > 1 0.716797 0.395833 0.216406 0.147222
+          0 0.687109 0.379167 0.255469 0.158333
+          1 0.420312 0.395833 0.140625 0.166667  
               
  -  在 \data 文件夹下创建 train.txt 文件，输入图片的绝对路径，每张图片占一行，内容如下：
     >   /hdd01/wanghuijiao/darknet/coco/train2017/img1.jpg
