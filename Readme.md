@@ -75,8 +75,8 @@
 > ln -s /hdd02/zhangyiyang/data/coco/val2014  /hdd01/wanghuijiao/darknet/coco/cocoMetadata/images
 
   - 为数据生成规定输入格式：
-  - 为每张 .jpg 图片生成单独的 .txt 文件，图片中每个目标对象占一行，格式为 <object-class>  <x_center>  <y_center>  <width>  <height>   
-      - <object-class>：从标号为 0 到 (classes-1) 的整数，表示类别标签序号         
+  - 为每张 .jpg 图片生成单独的 .txt 文件，图片中每个目标对象占一行，格式为 '<object-class>'  <x_center>  <y_center>  <width>  <height>   
+      - \<object-class\>：从标号为 0 到 (classes-1) 的整数，表示类别标签序号         
       - <x_center> < y_center>  <width>  <height>: 是与图像标签框宽和高有关的浮点数，例如： 
         > x_center = absolute_x_center / image_width 
         > height = absolute_height / image_height
