@@ -82,17 +82,18 @@
         > height = absolute_height / image_height
 
       - 注意：\<x_center\>, \<y_center\> 是矩形框的中心并非左上角。  
-      - .txt文件名和 .jpg 图片名保持一致
+      - .txt 文件名和 .jpg 图片名保持一致
       - txt 内容示例如：
         > 1 0.716797 0.395833 0.216406 0.147222
-          0 0.687109 0.379167 0.255469 0.158333
-          1 0.420312 0.395833 0.140625 0.166667  
+        > 0 0.687109 0.379167 0.255469 0.158333
+        > 1 0.420312 0.395833 0.140625 0.166667  
               
  -  在 \data 文件夹下创建 train.txt 文件，输入图片的绝对路径，每张图片占一行，内容如下：
     >   /hdd01/wanghuijiao/darknet/coco/train2017/img1.jpg
-        /hdd01/wanghuijiao/darknet/coco/train2017/img2.jpg
-        /hdd01/wanghuijiao/darknet/coco/train2017/img3.jpg
-   
+    >   /hdd01/wanghuijiao/darknet/coco/train2017/img2.jpg
+    >   /hdd01/wanghuijiao/darknet/coco/train2017/img3.jpg
+ 
+ -  val.txt 准备同上
 
 6. (忽略，已放弃这种改法) 修改 src/data.c，限制只读入 human 检测标注框，对应将 L225-239 改为：
 >         if (id==0){
